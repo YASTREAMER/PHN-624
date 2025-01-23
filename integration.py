@@ -8,7 +8,7 @@ def main():
     lowerlimit = 0
     upperlimit = 1
     integration = 0
-    while i <= 2:
+    while i <= upperlimit:
         hel = fun(i)
         if i == 2 or i == 0:
             integration = integration + hel
