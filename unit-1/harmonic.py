@@ -8,7 +8,7 @@ import numpy as np
 def main() -> None:
     val = np.linspace(-8, 8, 100000)
     num = int(input("Enter the number for which you want to calculate\n"))
-    plt.ylim(-3, 3)
+    plt.ylim(-2, 2)
 
     vharm = np.vectorize(harmonic)
     nrange = []

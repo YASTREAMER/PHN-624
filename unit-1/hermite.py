@@ -12,7 +12,7 @@ def hermite(num: int, x: float) -> float:
 
 def main():
     val = np.linspace(-3, 3, 100000)
-    num = int(input("Enter the number for which you want to calculate\n"))
+    num = int(input("enter the number for which you want to calculate\n"))
     plt.ylim(-50, 50)
 
     nrange=[]
