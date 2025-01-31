@@ -27,9 +27,9 @@ def main():
     for i in range(num):
         for j in m:
             plt.plot(val, vlag(i, j, val))
-            nrange.append(str(i) + str(j))
+            nrange.append(str(i+1) + str(j+1))
             plt.legend(nrange)
-        plt.savefig(f"Figure/associatedLagendre-{i}.png")
+        plt.savefig(f"Figure/associatedLagendre-{i+1}.png")
         plt.clf()
     # plt.show()
 
