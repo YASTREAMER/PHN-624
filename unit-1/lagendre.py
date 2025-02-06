@@ -7,31 +7,46 @@ from factorial import *
 
 def main():
     dir()
+    plt.ylim(-1, 1)
     val = np.linspace(-1, 1, 100000)  # val is x
+    choice = int(input("Enter 1 for Legendre and 2 for Associated Legendre"))
     num = int(
         input("enter the number for which you want to calculate\n")
     )  # num is also l
 
-    m = []
+    if choice == 2:
+        m = num
+        plotAssocaite(num, val, m)
+    elif choice == 1:
+        plotLeg(num, val)
+    else:
+        print("Error: Invalid input")
 
-    for i in range(-num, num):
-        m.append(i)
 
-    # plt.xlim(-2, 2)
-    plt.ylim(-2, 2)
+def plotLeg(num, val) -> None:
 
     nrange = []
-
-    vlag = np.vectorize(associatedLagendre)
+    vlag = np.vectorize(lagendre)
 
     for i in range(num):
-        for j in m:
-            plt.plot(val, vlag(i, j, val))
-            nrange.append(str(i+1) + str(j+1))
-            plt.legend(nrange)
-        plt.savefig(f"Figure/associatedLagendre-{i+1}.png")
-        plt.clf()
-    # plt.show()
+        plt.plot(val, vlag(i, val))
+        nrange.append(str(i))
+    plt.legend(nrange)
+    plt.title("Legendre")
+    plt.show()
+
+
+def plotAssocaite(num: int, val, m: int) -> None:
+
+    nrange = []
+    vlag = np.vectorize(associatedLagendre)
+
+    for i in range(-m, m, 1):
+        plt.plot(val, vlag(num, i, val))
+        nrange.append(str(num) + str(i))
+    plt.legend(nrange)
+    plt.title("Associated Legendre")
+    plt.show()
 
 
 def lagendre(num: int, x: float) -> float:
@@ -70,9 +85,10 @@ def associatedLagendre(l: int, m: int, x: float) -> float:
         ) / (l - m)
 
 
-def dir()->None:
+def dir() -> None:
     if not os.path.exists("Figure"):
         os.mkdir("Figure")
+
 
 if __name__ == "__main__":
     main()
