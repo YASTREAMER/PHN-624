@@ -50,6 +50,7 @@ def plotAssocaite(num: int, val, m: int) -> None:
 
 
 def lagendre(num: int, x: float) -> float:
+
     if num == 0:
         return 1
     elif num == 1:
