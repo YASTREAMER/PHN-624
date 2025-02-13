@@ -25,7 +25,7 @@ def main():
     plt.show()
 
 
-def Cal(l, m, theta, phi):
+def Cal(l, m, theta, phi)-> tuple:
     r = Spherical(l, m, theta, phi)
     return (
         r * np.sin(theta) * np.cos(phi),
