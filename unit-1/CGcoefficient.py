@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+
 from factorial import factorial
 
 
@@ -10,6 +12,13 @@ def main() -> None:
 
     M = [1, 0, 0, -1]
     J = [1, 1, 0, 1]
+
+    cg = cal(j1, j2, m1_m2, M, J)
+
+    print(f"The CGCoefficient is \n {pd.DataFrame(cg)}")
+
+
+def cal(j1:float, j2:float, m1_m2:list, M:list, J:list) -> list:
 
     cg = []
     cg1 = []
@@ -25,7 +34,7 @@ def main() -> None:
             cg1.append(cgCoeff(j1, j2, J[i], m1_m2[j][0], m1_m2[j][1], M[i]))
         cg.append(cg1)
 
-    print(cg)
+    return cg
 
 
 def cgCoeff(j1, j2, J, m1, m2, M) -> tuple:
@@ -51,7 +60,7 @@ def cgCoeff(j1, j2, J, m1, m2, M) -> tuple:
 
     F3 = f3(j1, j2, J, m1, m2)
 
-    return (F1 * F2 * F3)
+    return F1 * F2 * F3
 
 
 def f3(j1, j2, J, m1, m2) -> float:
@@ -70,7 +79,7 @@ def f3(j1, j2, J, m1, m2) -> float:
     Smin, Smax = int(Smin), int(Smax)
     F3 = 0
 
-    for s in range(Smin, Smax+1):
+    for s in range(Smin, Smax + 1):
         F3 = F3 + (
             (
                 ((-1) ** s)
