@@ -6,20 +6,21 @@ def main():
     energy = []
     mass = []
 
-    for A in range(2, 251):
+    for A in range(1, 251):
+
         if A % 2 == 0:
-            even = True
+            Z = A / 2
+
         else:
-            even = False
+            Z = (A - 1) / 2
 
-        Z = stable(A)
-        Z = int(round(Z))
-        N = A - Z
+        even = True if (A - Z) % 2 == 0 else False
 
-        energy.append(empherical(A, Z, even)/N)
+        en = empherical(A, Z, even)
+
+        energy.append((en / A))
         mass.append(A)
     plt.plot(mass, energy)
-
     plt.show()
 
 
@@ -31,33 +32,24 @@ def empherical(A: int, Z: float, even: bool) -> float:
     colTerm = 0.71
     pairTerm = 33.5
 
-    if not (even):
-        pairing = 0
-    else:
+    if even:
         pairing = pairTerm / np.power(A, (3 / 4))
+    else:
+        pairing = 0
 
-    if Z % 2 == 0:
+    if Z % 2 != 0 and even:
         pairing = -pairing
 
-    energy = (
-        volTerm * A
-        - surfaceTerm * np.power(A, (2 / 3))
-        - asymm * np.power((A - Z * 2), 2) / A
-        - colTerm * np.power(Z, 2) / np.power(A, (1 / 3))
-        - pairing
-    )
+    sur = surfaceTerm * np.power(A, (2 / 3))
+    vol = volTerm * A
 
+    aterm = np.power((A - 2 * Z), 2) / A
+    aterm = aterm * asymm
+
+    col = colTerm * np.power(Z, 2) / np.power(A, (1 / 3))
+
+    energy = vol - sur - aterm - col + pairing
     return energy
-
-
-def stable(A):
-    asymm = 23.70
-    colTerm = 0.71
-
-    Z = (2 * asymm) / (2 * asymm + colTerm * np.power(A, (2 / 3)))
-    Z = Z * A
-
-    return Z
 
 
 if __name__ == "__main__":
