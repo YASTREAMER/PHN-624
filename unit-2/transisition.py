@@ -5,7 +5,7 @@ from simpson import integration
 def main():
     A = 238
     Z = 92
-    div = 10000000
+    div = 1000000
     energy = 5.0 * (1.6 * 10**-13)
     # mass = 3727.3794118 * (1.6 * 10**-19)  # mass fo alpha particle in MeV
     mass = 6.6446e-27

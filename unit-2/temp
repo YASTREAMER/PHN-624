@@ -1,0 +1,54 @@
+
+
+
+def runge(n=10000) -> float:
+
+    if n == 1:
+        return 1
+
+    return runge(n - 1)
+
+
+def z1(n) -> float:
+
+    if n == 0:
+        return -100
+
+    return z1(n - 1) + (k1(n - 1) + k4(n - 1) + 2 * (k2(n - 1) + k3(n - 1)))
+
+
+def z2(n):
+
+    if n == 0:
+
+        E = 5  # Mev
+        # For an alpha particle
+        m = 2 * 939.5654133 + 2 * 938.272083
+        return np.sqrt(2 * E / m)
+
+    return z2(n - 1)
+
+
+def z3(n):
+    if n == 0:
+        return 0
+
+    return z3(n - 1)
+
+
+def k1(n) -> float:
+    pass
+
+
+def k2(n) -> float:
+    pass
+
+
+def k3(n) -> float:
+    pass
+
+
+def k4(n) -> float:
+    pass
+
+

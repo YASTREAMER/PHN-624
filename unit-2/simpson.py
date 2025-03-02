@@ -20,7 +20,6 @@ def integration(fx, upper, lower, div=1000, *args) -> float:
     for i in np.linspace(lower, upper , div):
 
         if i == lower or i ==upper:
-            print(i)
             result = result + fx(i, *args)
             num += 1
             continue
