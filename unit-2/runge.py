@@ -44,7 +44,7 @@ def runge(A=197, atomic=79):
     plt.show()
 
 
-def calculate(Z, q, Q, m, RT):
+def calculate(Z, q, Q, m, RT)-> None:
 
     t = 0
     step = 10000
