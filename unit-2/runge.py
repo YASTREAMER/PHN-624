@@ -8,7 +8,6 @@ def main():
     code is very helpful
 
     """
-
     runge()
 
 
@@ -20,8 +19,6 @@ def runge(A=197, atomic=79):
     # m = m *1.6e-16
 
     RT = 1.2 * A ** (1 / 3)
-    # Q = atomic * (1e-6)
-    # q = 2e-6
     Q = 79
     q = 2
 
@@ -44,7 +41,7 @@ def runge(A=197, atomic=79):
     plt.show()
 
 
-def calculate(Z, q, Q, m, RT)-> None:
+def calculate(Z, q, Q, m, RT) -> None:
 
     t = 0
     step = 10000
@@ -71,12 +68,20 @@ def calculate(Z, q, Q, m, RT)-> None:
             k3.append(f3(t, temp))
             k4.append(f4(t, temp, q, Q, m, r))
             temp = []
-            temp = [
+            if j == 0 or j == 3:
+                temp = [
+                    Z[0] + k1[j] / 2,
+                    Z[1] + k2[j] / 2,
+                    Z[2] + k3[j] / 2,
+                    Z[3] + k4[j] / 2,
+                ]
+            else:
+                temp = [
                 Z[0] + k1[j] / 2,
                 Z[1] + k2[j] / 2,
                 Z[2] + k3[j] / 2,
                 Z[3] + k4[j] / 2,
-            ]
+                ]
 
         Z[0] = Z[0] + ((2 * (k1[1] + k1[2]) + k1[0] + k1[3]) / 6)
 

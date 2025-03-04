@@ -14,7 +14,6 @@ def transition(j1, j2, m, M, J):
     qt = 224
 
     cgcoeff = cal(j1, j2, m, M, J)
-    print(cgcoeff)
 
     trans = np.power(cgcoeff,2) * qt * 5 / (16 * np.pi)
 
