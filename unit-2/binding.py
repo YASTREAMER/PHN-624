@@ -20,6 +20,7 @@ def main():
 
         energy.append((en / A))
         mass.append(A)
+    print(energy[14])
     plt.plot(mass, energy)
     plt.show()
 

@@ -1,0 +1,10 @@
+The proton drip line of 14 is (8.043787407579863, 20.756690647473143)
+The binding energy per nucleon of N is : 0.5238203132380626 
+The proton drip line of 26 is (14.57947910046598, 39.65031607050969)
+The binding energy per nucleon of Mg is : 0.32253294002484423 
+The proton drip line of 25 is (14.04849963185134, 38.0413567890988)
+The binding energy per nucleon of Cl is : 0.1465661068099296 
+The proton drip line of 110 is (53.5119370115783, 190.33903579129372)
+The binding energy per nucleon of Cd is : 0.07778510517419608 
+The proton drip line of 202 is (88.64002315295623, 379.30878928443803)
+The binding energy per nucleon of Hg is : 0.03891573509956889 
