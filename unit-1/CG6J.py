@@ -2,7 +2,6 @@ from factorial import factorial
 
 import numpy as np
 
-
 def main():
     j1 = 2
     j2 = 0
