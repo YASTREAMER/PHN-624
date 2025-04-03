@@ -70,17 +70,17 @@ def calculate(Z, q, Q, m, RT) -> None:
             temp = []
             if j == 0 or j == 3:
                 temp = [
+                    Z[0] + k1[j],
+                    Z[1] + k2[j],
+                    Z[2] + k3[j],
+                    Z[3] + k4[j],
+                ]
+            else:
+                temp = [
                     Z[0] + k1[j] / 2,
                     Z[1] + k2[j] / 2,
                     Z[2] + k3[j] / 2,
                     Z[3] + k4[j] / 2,
-                ]
-            else:
-                temp = [
-                Z[0] + k1[j] / 2,
-                Z[1] + k2[j] / 2,
-                Z[2] + k3[j] / 2,
-                Z[3] + k4[j] / 2,
                 ]
 
         Z[0] = Z[0] + ((2 * (k1[1] + k1[2]) + k1[0] + k1[3]) / 6)
