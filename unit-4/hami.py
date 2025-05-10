@@ -42,7 +42,6 @@ def Energyhw(N: int, nz: int, deltaosc: np.ndarray) -> list:
 def HcutOmega(delta: float, A: int = 80) -> float:
     deltafunc = (1 + 2 / 3 * delta) ** 2
     deltafunc = deltafunc * (1 - (4 / 3) * delta)
-    # print(deltafunc)
     deltafunc = deltafunc ** (-1 / 6)
     hw = 41 * A ** (-1 / 3) * deltafunc
     return hw
